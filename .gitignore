@@ -1,5 +1,13 @@
 #eclipse stuff
-/target
 /.classpath
 /.project
 /.settings
+
+#maven
+/target
+
+#vim
+*.*.sw[a-p]
+
+#gedit
+*.*~
