@@ -3,6 +3,20 @@
   <groupId>com.github.IronButton</groupId>
   <artifactId>IronButton-plugin</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  
+  <repositories>
+    <repository>
+      <id>repobo-rel</id>
+      <name>repo.bukkit.org Releases</name>
+      <url>http://repo.bukkit.org/content/repositories/releases/</url>
+    </repository>
+    <repository>
+      <id>repobo-snap</id>
+      <name>repo.bukkit.org Snapshots</name>
+      <url>http://repo.bukkit.org/content/repositories/snapshots/</url>
+    </repository>
+  </repositories>
+  
   <build>
     <sourceDirectory>src</sourceDirectory>
     <plugins>
