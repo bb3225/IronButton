@@ -14,13 +14,25 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.eclipse.jetty.server.Request;
 import org.eclipse.jetty.server.handler.AbstractHandler;
 
+/**
+ * Represents a handler that is used for process command from remote
+ * @author circuitcoder
+ * @see com.github.IronButton.core.MainPlugin
+ */
 public class ProcessCmd extends AbstractHandler{
 	
+	/**
+	 * The plugin the object belongs to<br />
+	 * Assigned when the object is created
+	 */
 	private JavaPlugin plugin;
 	public ProcessCmd(JavaPlugin thePlugin) {
 		plugin=thePlugin;
 	}
 
+	/**
+	 * Tries to process the command according to the request
+	 */
 	@Override
 	public void handle(String target, Request baseRequest, HttpServletRequest request, HttpServletResponse response)
 			throws IOException, ServletException {
@@ -56,6 +68,7 @@ public class ProcessCmd extends AbstractHandler{
 		}
 		plugin.getLogger().info("Running from Remote: "+cmd);
 		//TODO: FIXME
+		/*
 		plugin.getLogger().addHandler(new Handler() {
 			@Override
 			public void close() throws SecurityException {			}
@@ -73,6 +86,8 @@ public class ProcessCmd extends AbstractHandler{
 			}
 			
 		});
+		*/
+		
 		boolean cmdFound=plugin.getServer().dispatchCommand(plugin.getServer().getConsoleSender(), cmd);
 		if(!cmdFound) output.println("#!CommandNotFound");
 		else output.println("#!ProcessSuccess");
